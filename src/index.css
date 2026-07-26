@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Baloo+Da+2:wght@500;700&family=Hind+Siliguri:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital@0;1&display=swap");
+@import "tailwindcss";
+
+:root {
+  --wine-950: #260810;
+  --wine-900: #3a0f1e;
+  --wine-800: #4a1428;
+  --gold: #c9a24b;
+  --gold-soft: #e3c98a;
+  --gold-dim: #8a7038;
+  --ivory: #f6ecdf;
+  --blush: #e7c3c0;
+  --ink: #170408;
+
+  --font-display: "Tiro Bangla", "Cormorant Garamond", serif;
+  --font-script: "Baloo Da 2", "Tangerine", cursive;
+  --font-body: "Hind Siliguri", "EB Garamond", serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--wine-950);
+  color: var(--ivory);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.screen-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  color: var(--gold-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

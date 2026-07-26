@@ -1,0 +1,23 @@
+.closing-section {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1.5rem 8rem;
+  text-align: center;
+}
+
+.closing-line {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3.4vw, 1.8rem);
+  color: var(--blush);
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.closing-name {
+  font-family: var(--font-script);
+  font-size: clamp(2.6rem, 8vw, 4rem);
+  color: var(--gold-soft);
+  margin: 0;
+}

@@ -1,0 +1,106 @@
+.ambience {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  contain: layout style paint;
+}
+
+.mote {
+  position: absolute;
+  bottom: -5%;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-soft) 0%, transparent 70%);
+  opacity: 0;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation-name: rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.55;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(var(--drift), -105vh, 0);
+    opacity: 0;
+  }
+}
+
+.falling-memories {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.memory-card {
+  position: absolute;
+  top: 0;
+  aspect-ratio: 4 / 5;
+  padding: 5% 5% 14%;
+  background: linear-gradient(160deg, var(--ivory), var(--gold-soft) 180%);
+  border-radius: 6px;
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset;
+  filter: blur(var(--blur, 0px));
+  opacity: 0;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  animation-name: fallMemory;
+  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  animation-iteration-count: infinite;
+  user-select: none;
+}
+
+.memory-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+/* A gentle pendulum-like drift as it falls — swaying left, then right,
+   with a soft tumble in rotation — instead of a mechanical straight line. */
+@keyframes fallMemory {
+  0% {
+    transform: translate3d(0, -30vh, 0) rotate(var(--rotate-start, 0deg));
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--peak-opacity, 0.16);
+  }
+  35% {
+    transform: translate3d(var(--drift-a), 30vh, 0) rotate(var(--rot-a, -10deg));
+  }
+  65% {
+    transform: translate3d(var(--drift-b), 80vh, 0) rotate(var(--rot-b, 10deg));
+  }
+  92% {
+    opacity: var(--peak-opacity, 0.16);
+  }
+  100% {
+    transform: translate3d(0, 130vh, 0) rotate(var(--rotate-start, 0deg));
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-card,
+  .mote {
+    animation: none;
+    opacity: 0;
+  }
+}
