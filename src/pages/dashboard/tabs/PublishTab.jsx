@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../../../lib/supabase";
 
-const BKASH_NUMBER = "01XXXXXXXXX"; // TODO: replace with your real bKash merchant/personal number
+const BKASH_NUMBER = "01941637656"; // TODO: replace with your real bKash merchant/personal number
 
 export default function PublishTab({ event, usedImages = 0 }) {
   const [payments, setPayments] = useState([]);
