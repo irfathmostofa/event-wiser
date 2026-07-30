@@ -45,7 +45,7 @@ export default function Ambience({ photos = [] }) {
 
   return (
     <div className="ambience" aria-hidden="true">
-      {fallingPhotos.length > 0 && (
+      {/* {fallingPhotos.length > 0 && (
         <div className="falling-memories">
           {fallingPhotos.map((photo) => (
             <div
@@ -69,7 +69,7 @@ export default function Ambience({ photos = [] }) {
             </div>
           ))}
         </div>
-      )}
+      )} */}
       {motes.map((m) => (
         <span
           key={m.id}
